@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOPE PVT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./fonts/typography-font/typo.css">
+    <link rel="stylesheet" type=text/css href= "{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap">
+</head>
+<body>
+    <!-- <div id="header">
+        
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">Contact</a></li>   
+
+        </div> -->
+        <nav class="navbar navbar-inverse navbar-fixed-top " style="background-color: rgba(68, 66, 66, 0.925);" >
+            <a class="navbar-brand" href="{% url 'index' %}"
+                style="font-family: 'Mazzard H';font-size: 1.9rem;color:rgb(255, 166, 0); margin-right:36%">HOPE PVT</a>
+                <!-- <form class="form-group"> -->
+                    <div class="form-group">                    
+                        <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                        <!-- <button class="btn btn-outline-success my-1 my-sm-0" type="submit">Search</button> -->
+                    </div>
+                <!-- </form> -->
+                <a class="navbar-brand bg-warning" href="{% url 'managerlogin' %}"
+                style="font-family: 'Mazzard H';font-size: 1.6rem;color:white;">Manager Login</a>
+                <a class="navbar-brand bg-warning" href="{% url 'employeelogin' %}" 
+                style="font-family: 'Mazzard H';font-size: 1.6rem;color:white;">Employee Login</a>
+        </nav><br>
+    <div id="container">
+            <div id="banner">
+                <img src="{% static 'img/rem1.jpg' %}" class="shadow-lg p-3 mb-5 bg-orange rounded" style="width: 40%; box-shadow: brown; ;" >
+                <div class="card">
+                    <!-- <div class="card-body">
+                        <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fres.cloudinary.com%2Fpeople-matters%2Fimage%2Fupload%2Fq_auto%2Cf_auto%2Fv1574588357%2F1574588356.jpg&imgrefurl=https%3A%2F%2Fwww.peoplematters.in%2Fblog%2Fwatercooler%2Fthe-new-definition-of-organizational-success-23842&tbnid=aj47K04TGrQEsM&vet=12ahUKEwjbkYOs8eDyAhV_sUsFHbItCnsQMygPegUIARDSAQ..i&docid=bZTceBEitdwUEM&w=1280&h=720&q=successful%20organisation&ved=2ahUKEwjbkYOs8eDyAhV_sUsFHbItCnsQMygPegUIARDSAQ" class="shadow-lg p-3 mb-5 bg-orange rounded" style="width: 40%; box-shadow: brown; ;" >
+
+                    </div> -->
+                </div>
+            </div>
+            <div id="content1">
+                <h4 class="heading">Welcome !</h4>
+                <p class="para1">This is first paragraph for this website. this we have lat of information.This is first paragraph for this website. this we have lat of information.
+                    This is first paragraph for this website. this we have lat of information.
+                </p>
+                <a href="#" class="more">Read More...</a>
+                
+            </div>
+                
+            <div id="content2">
+                <h4 class="heading">Our Services !</h4>
+                <p class="para1">This is first paragraph for this website. this we have lat of information.This is first paragraph for this website. this we have lat of information.
+                    This is first paragraph for this website. this we have lat of information.
+                </p>
+                <a href="#" class="more">Read More...</a>
+            </div>
+            
+            <div id="content3">
+                <h4 class="heading">About Us !</h4>
+                <p class="para1">This is first paragraph for this website. this we have lat of information.This is first paragraph for this website. this we have lat of information.
+                    This is first paragraph for this website. this we have lat of information.
+                </p>
+                <a href="#" class="more">Read More....</a>
+            
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <div id="bottom2">
+                <h2>Process</h2>
+                <p >This is first paragraph for this website.<b> this we have lat of information</b>.This is first paragraph for this website. this we have lat of information.
+                    This is first paragraph for this website. this we have lat of information.
+                </p><br>
+
+                <h2>Conection</h2>
+                <p >This is first paragraph for this website.<b> this we have lat of information</b>.This is first paragraph for this website. this we have lat of information.
+                    This is first paragraph for this website. this we have lat of information.
+                </p>
+                <a href="#">Read more</a>
+
+
+            </div>
+            <div id="bottom3">
+                <h2>About Us </h2>
+                <p >This is first paragraph for this website.<b> this we have lat of information</b>.This is first paragraph for this website. this we have lat of information.
+                    
+                </p>
+                <img src="{% static 'img/rem2.jpg' %}" />
+
+            </div>      
+        </div>
+        
+</body>
+</html>

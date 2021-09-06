@@ -1,0 +1,132 @@
+{% extends 'managerheader.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Michroma" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'adminpanel/css/style.css' %}" />
+
+    <title>Update Employee Details</title>
+</head>
+<body>
+	{% block content %}
+    <div style="padding-top:2%;padding-bottom:10%;">
+    <div class="container">
+        <h2 align="center" style="color:gray;">Employee Details</h2><br>
+        <div class="card shadow">
+            <div class="card-body">
+
+                <form action="{% url 'updatemanemp' %}" method="POST" ">
+                    {% csrf_token %}
+                    <div class="row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-4">
+                           <label for="name"><b style="color:gray;">Name</b></label>
+                        <input type="text" class="form-control" value="{{emp.firstname}}" placeholder="{{emp.firstname}}" name="name" id="name">
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-4">
+                           <label for="mobile"><b style="color:gray;">Mobile</b></label>
+                        <input type="text" class="form-control" value="{{emp.mobile}}"  placeholder="{{emp.mobile}}" name="mobile"
+                                        id="mobile" >
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-4">
+                        <label for="empid"><b style="color:gray;">Empid</b></label>
+                     <input type="text" class="form-control" value="{{emp.eid}}"  placeholder="{{emp.eid}}" name="empid"
+                                     id="empid" >
+                 </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="Skill1"><b style="color:gray;">Skill1</b></label>
+                            <input type="text" class="form-control" id="Skill1" name="Skill1" value="{{emp.skill1}}" 
+                                placeholder="{{emp.skill1}}" >
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="percentage1"><b style="color:gray;">percenetage</b></label>
+                            <input type="text" class="form-control" id="percentage1" name="percentage1" value="{{emp.skillpercentage1}}" 
+                                placeholder="{{emp.skillpercentage1}}" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="Skill2"><b style="color:gray;">Skill2</b></label>
+                            <input type="text" class="form-control" id="Skill2" name="Skill2" value="{{emp.skill2}}" 
+                                placeholder="{{emp.skill2}}" >
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="percentage2"><b style="color:gray;">percenetage</b></label>
+                            <input type="text" class="form-control" id="percentage2" name="percentage2" value="{{emp.skillpercentage2}}" 
+                                placeholder="{{emp.skillpercentage2}}" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="Skill3"><b style="color:gray;">Skill3</b></label>
+                            <input type="text" class="form-control" id="Skill3" name="Skill3" value="{{emp.skill3}}" 
+                                placeholder="{{emp.skill3}}" >
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="percentage3"><b style="color:gray;">percenetage</b></label>
+                            <input type="text" class="form-control" id="percentage3" name="percentage3" value="{{emp.skillpercentage3}}" 
+                                placeholder="{{emp.skillpercentage3}}" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="Skill4"><b style="color:gray;">Skill4</b></label>
+                            <input type="text" class="form-control" id="Skill4" name="Skill4" value="{{emp.skill4}}" 
+                                placeholder="{{emp.skill4}}" >
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="percentage4"><b style="color:gray;">percenetage</b></label>
+                            <input type="text" class="form-control" id="percentage4" name="percentage4" value="{{emp.skillpercentage4}}" 
+                                placeholder="{{emp.skillpercentage4}}" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="skill5"><b style="color:gray;">skill5</b></label>
+                            <input type="text" class="form-control" id="skill5" name="skill5" value="{{emp.skilll5}}" 
+                                placeholder="{{emp.skilll5}}" >
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="percentage5"><b style="color:gray;">percenetage</b></label>
+                            <input type="text" class="form-control" id="percentage5" name="percentage5" value="{{emp.skillpercentage5}}" 
+                                placeholder="{{emp.skillpercentage5}}" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                           <label for="email"><b style="color:gray;">Email</b></label>
+                        <input type="text" class="form-control"  value="{{emp.email}}"  placeholder="{{emp.email}}" name="email" id="email">
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <label for="password"><b style="color:gray;">Password</b></label>
+                            <input type="text" class="form-control" id="password" name="password" value="{{emp.password}}" 
+                                placeholder="{{emp.password}}" >
+                    </div>      
+                </div>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-12 col-lg-4">
+                            <button type="submit" class="btn btn-block" name="upadteemp" value="{{emp.id}}"
+                                style="color:white;background-color:#9241AB;">UPDATE EMPLOYEE</button>
+                        </div>
+                    </div>
+                    <br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+</body>
+</html>

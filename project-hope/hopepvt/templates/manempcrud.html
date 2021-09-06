@@ -1,0 +1,137 @@
+{% extends 'managerheader.html' %}
+{% load static %}
+{% block page_title %} Employee Details  {% endblock %}{% block content %}
+
+<div style="padding-top:2%;padding-bottom:20%;">
+    <div class="container">
+        <h4 style="text-align:center;color:#990000;"><b>Employee Details</b></h4>
+        <!-- <div class="col-sm-12 col-md-12 col-lg-3">
+           
+           </div> -->
+        <div class="row">
+           <div class="col-sm-12 col-md-12 col-lg-3" style="padding-bottom: 10px; align-content: flex-end; ">
+            <a href="{% url 'addmanemp' %}" type="button" class="btn btn-block" name="paybtn"
+            style="background-color: #0d6314;color: white;font-size:12px;border-radius: 20px;margin-left: 835px;">ADD NEW EMPLOYEE</a>
+            </div>
+        </div>
+                    {% if Emp %} {% for item in Emp %}
+                    <div class="card" style="background-color:white;">
+                        <div class="card-body">
+                            <div class="row justify-content-center" id="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <table class="table1" >
+                                        <tr class="tr">
+                                            <th>Name</th>
+                                            <td>: {{item.firstname}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Employee ID</th>
+                                            <td>: {{item.eid}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email</th>
+                                            <td>: {{item.email}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Mobile</th>
+                                            <td>: {{item.mobile}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-6">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <form action="{% url 'updatemanemp' %}" method="POST">{% csrf_token %}
+                                                <button type="submit" class="btn btn-block" name="paybtn"value="{{item.id}}"
+                                                        style="background-color: #4d4dff;color: white;font-size:12px;border-radius: 20px;">UPDATE</button>
+                                            </form>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-6">
+                                            <form action="{% url 'deletemanemp' %}" method="POST">{% csrf_token %}
+                                                <button type="submit" class="btn btn-block" name="deleteemp"value="{{item.id}}"
+                                                        style="background-color: #c50d0d;color: white;font-size:12px;border-radius: 20px;">DELETE</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <br>
+                    {% endfor %}
+                    {% else %}
+                    <div class="card shadow-sm" style="margin: 1% 0;">
+                        <div class="card-body">
+                            <center>
+                                <p>No Orders Yet</p>
+                            </center>
+                        </div>
+                    </div>
+                    {% endif %}
+    
+                 <!--Pagination-------------->
+                    <nav aria-label="Page navigation example" style="margin: 1%;">
+                        {% if Emp.has_other_pages %}
+                        {% if Emp.paginator.num_pages <= 5 %}
+                        <ul class="pagination pagination-sm justify-content-end">
+                            {% if biginvoice_completed.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ Emp.previous_page_number }}">Previous</a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            {% endif %} {% for i in Emp.paginator.page_range %} {% if Emp.number == i %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ i }}
+                                    <span class="sr-only">(current)</span>
+                                </span>
+                            </li>
+                            {% else %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                            </li>
+                            {% endif %} {% endfor %} {% if Emp.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ Emp.next_page_number }}">Next</a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link">Next</span>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        {% else %}
+                        <ul class="pagination pagination-sm justify-content-end">
+                            {% if Emp.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ Emp.previous_page_number }}">Previous</a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            {% endif %}
+                            <li class="page-item active">
+                                <span class="page-link"> On Page {{ Emp.number }} Out Of
+                                    {{Emp.paginator.num_pages}} Pages
+                                    <span class="sr-only">(current)</span>
+                                </span>
+                            </li>
+                            {% if Emp.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ Emp.next_page_number }}">Next</a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <span class="page-link">Next</span>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        {% endif %}
+                        {% endif %}
+                    </nav>
+</div>
+</div>
+
+{% endblock %}
